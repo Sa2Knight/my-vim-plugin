@@ -1,5 +1,3 @@
-scriptencoding utf-8
-
 function! GetRandom(min, max)
   return reltime()[1] % (a:max - a:min + 1) + a:min
 endfunction
@@ -14,7 +12,7 @@ endfunction
 
 function! InsertRandomDateTime()
   let datetime = GetRandomDateTime()
-  execute ":normal a" . datetime
+  execute ":normal a" . datetime . "\n"
 endfunction
 
 command! RandDateTime call InsertRandomDateTime()
